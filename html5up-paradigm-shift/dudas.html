@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones con mensajes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #b30f0f;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            width: 100%;
+            max-width: 300px; /* Para limitar el ancho máximo */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #mensaje1, #mensaje2, #mensaje3, #mensaje4 {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: left; /* Alineación del texto */
+        }
+
+        @media (max-width: 600px) {
+            button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="mostrarMensaje('mensaje1')">Donde pagar</button>
+        <button onclick="mostrarMensaje('mensaje2')">Cuando empieza la suscripcion</button>
+        <button onclick="mostrarMensaje('mensaje3')">Como pagar</button>
+        <button onclick="mostrarMensaje('mensaje4')">En caso de un error en el pago</button>
+
+        <div id="mensaje1">Se puede pagar tanto en efectivo en la recepción como en línea desde esta página.</div>
+        <div id="mensaje2">La suscripción empieza justo el día que se hace el pago del plan elegido.</div>
+        <div id="mensaje3">Se puede pagar en efectivo o con tarjeta.</div>
+        <div id="mensaje4">En caso de tener un error en el pago, ve a recepción con una copia del ticket para solucionarlo.</div>
+    </div>
+
+    <script>
+        function mostrarMensaje(id) {
+            // Ocultar todos los mensajes
+            document.getElementById('mensaje1').style.display = 'none';
+            document.getElementById('mensaje2').style.display = 'none';
+            document.getElementById('mensaje3').style.display = 'none';
+            document.getElementById('mensaje4').style.display = 'none';
+
+            // Mostrar el mensaje correspondiente al ID recibido
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
